@@ -25,14 +25,14 @@ const Products = () => {
     }
 
     return (
-        <div className="py-8 sm:px-5">
+        <div className="sm:px-5">
             <div className="flex justify-between items-center">
                 <h3 className="text-lg font-bold text-gray-700">All products</h3>
                 <Link to={`/product`}>
                     <button className="bg-transparent text-blue-500 font-semibold text-[13px]">See more</button>
                 </Link>
             </div>
-            <div className="w-full mt-4 grid grid-cols-4 xs:grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="w-full mt-4 grid grid-cols-4 lg:grid-cols-3 xs:grid-cols-1 sm:grid-cols-2 gap-4">
                 {products?.data?.map((product : any , idx : number) => <ProductCard key={idx} product={product} />)}
             </div>
         </div>

@@ -53,10 +53,12 @@ const Navbar = () => {
                    <AiOutlineLogout className="text-[16px]"/>
                    Logout
                  </button>
-                 <button className="flex items-center gap-x-3 font-medium text-gray-700 text-[12px]">
-                   <MdOutlinePayment className="text-[16px]"/>
-                   Transaction history
-                 </button>
+                <Link to="/transaction">
+                    <button className="flex items-center gap-x-3 font-medium text-gray-700 text-[12px]">
+                    <MdOutlinePayment className="text-[16px]"/>
+                    Transaction history
+                  </button>
+                </Link>
                </div>
             )}
         </nav>

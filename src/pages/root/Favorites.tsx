@@ -14,7 +14,7 @@ const  Favorites = () => {
                     <h5 className="text-lg sm:text-md font-medium text-gray-500">No Products</h5>
                 </div>
             ) : (
-                <div className="w-full grid grid-cols-4 sm:grid-cols-2 xs:grid-cols-1 gap-3 mt-7">
+                <div className="w-full grid grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-3 mt-7">
                     {favorites?.map((item : IFavoriteState , idx : number) => <FavoriteCard key={idx} favorite={item} />)}
                 </div>
             )}

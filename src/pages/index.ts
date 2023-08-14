@@ -5,6 +5,8 @@ import Register from "./auth/Register";
 import Carts from "./root/Carts";
 import Products from "./root/Products";
 import Favorites from "./root/Favorites";
+import TransactionHistory from "./root/TransactionHistory";
+import TransactionDetail from "./root/TransactionDetail";
 import CheckoutBoarding from "./root/CheckoutBoarding";
 
 import MainHome from "./root/MainHome";
@@ -20,5 +22,7 @@ export {
     Carts,
     Favorites,
     Products,
-    CheckoutBoarding
+    CheckoutBoarding,
+    TransactionHistory,
+    TransactionDetail
 }

@@ -12,13 +12,13 @@ const Banner = () => {
 
     if(isLoading ) {
         return (
-            <div className="w-full h-[400px] my-5 rounded-lg skeleton-box"></div>
+            <div className="w-full h-[400px] my-5 sm:my-0 rounded-lg sm:rounded-none skeleton-box"></div>
         )
     }
 
     if(error) {
         return (
-            <div className="w-full h-[400px] bg-gray-100 flex my-5 justify-center rounded-lg items-center">
+            <div className="w-full h-[400px] bg-gray-100 flex my-5 sm:my-0 sm:rounded-none justify-center rounded-lg items-center">
                 <h2 className=" uppercase text-2xl text-gray-400 font-bold">NO BANNER</h2>
             </div>
         )
@@ -34,11 +34,11 @@ const Banner = () => {
     };
 
     return (
-        <div className="w-full mt-7 sm:mt-0">
+        <div className="w-full my-7 sm:mt-0">
           <Slider {...settings}>
              {banner?.data?.map((item : any , idx : number) => (
                  <div key={idx} className="w-full relative overflow-hidden rounded-lg sm:rounded-none h-full">
-                    <img src={`${process.env.REACT_APP_BASE_IMAGE_URL}/banner/${item?.bannerImage}`} className="w-full object-cover rounded-lg h-[380px]"/>
+                    <img src={`${process.env.REACT_APP_BASE_IMAGE_URL}/banner/${item?.bannerImage}`} className="w-full object-cover rounded-lg h-[400px]"/>
                     <div className="absolute top-0 flex justify-center rounded-lg sm:rounded-none flex-col px-10 sm:px-5 left-0 w-full h-full bg-gray-800/50">
                         <h2 className="text-3xl  sm:text-lg text-white font-semibold">{item?.title}</h2>
                         <p className="text-white text-sm mt-2">{item?.subtitle}</p>

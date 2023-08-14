@@ -15,8 +15,8 @@ const SkeletonLoadingProduct = ({
 
   return (
 
-    <div className={`w-full gap-3 grid ${cols} sm:grid-cols-2`}>
-       {allSkeletonItems.map((item : number , idx : number) => <div key={idx} className="skeleton-box w-full h-[280px]"></div>)}
+    <div className={`w-full gap-3 grid ${cols} xs:grid-cols-1 sm:grid-cols-1 mt-5`}>
+       {allSkeletonItems.map((item : number , idx : number) => <div key={idx} className="skeleton-box rounded-lg w-full h-[280px]"></div>)}
     </div>
   )
 }

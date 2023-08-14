@@ -9,7 +9,9 @@ import {
   Carts, 
   Favorites ,
   Products,
-  CheckoutBoarding
+  CheckoutBoarding,
+  TransactionHistory,
+  TransactionDetail
 } from './pages';
 
 const App = () => {
@@ -27,6 +29,8 @@ const App = () => {
             <Route path="carts" element={<Carts/>}/>
             <Route path="favorites" element={<Favorites/>}/>
             <Route path="/checkout" element={<CheckoutBoarding/>}/>
+            <Route path="/transaction" element={<TransactionHistory/>}/>
+            <Route path="/transaction/:id" element={<TransactionDetail/>}/>
           </Route>
         </Routes>
     </div>

@@ -54,9 +54,14 @@ const cartSlice = createSlice({
 
             localStorage.setItem("wmart-user-cart" , JSON.stringify(state.carts));
             return state;
+        },
+        clearCart(state : CartState) {
+           state.carts = [];
+           localStorage.setItem("wmart-user-cart" , JSON.stringify(state.carts));
+           return state;
         }
-    }
+    },
 });
 
-export const { addCart,removeCart,updateCartQty } = cartSlice.actions;
+export const { addCart,removeCart,updateCartQty,clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

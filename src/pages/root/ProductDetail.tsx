@@ -31,7 +31,6 @@ const ProductDetail = () => {
     }, [product,favorites]);
 
 
-    if(isLoading) return <div>Loading</div>
 
     const addProductCartHandler = () => {
        dispatch(addCart({
@@ -44,6 +43,7 @@ const ProductDetail = () => {
         }));
 
         toast.remove();
+        setQty(1);
         return toast.success('product add to cart!' , {
             duration:6000,
             position:'top-center'
@@ -70,6 +70,40 @@ const ProductDetail = () => {
          }));
     }
 
+    if(isLoading) {
+        return (
+            <div className="w-full flex items-stretch sm:flex-col sm:gap-y-7 gap-x-10 mt-7">
+                <div className="w-[410px] skeleton-box h-[430px] rounded-lg"></div>
+                <div className="flex-1 sm:px-5">
+                    <div className="flex items-center gap-x-5">
+                        <h2 className="w-[80%] h-[21px] skeleton-box rounded-sm"></h2>
+                        <h2 className="w-[50px] h-[21px] skeleton-box rounded-sm"></h2>
+                    </div>
+                    <p className="mt-3 w-[60%] h-[15px] rounded-sm skeleton-box"></p>
+                    <p className="mt-5 w-[70%] h-[15px] rounded-sm skeleton-box"></p>
+                    <p className="mt-1 w-full h-[15px] rounded-sm skeleton-box"></p>
+                    <p className="mt-1 w-[60%] h-[15px] rounded-sm skeleton-box"></p>
+                    <p className="mt-1 w-[70%] h-[15px] rounded-sm skeleton-box"></p>
+                    <p className="mt-1 w-[60%] h-[15px] rounded-sm skeleton-box"></p>
+                    <p className="mt-1 w-[70%] h-[15px] rounded-sm skeleton-box"></p>
+                    
+                    {token && (
+                        <div className="mt-9">
+                            <div className="w-full flex items-center gap-x-2">
+                                <button className="py-2 px-2 rounded-md skeleton-box"></button>
+                                <span className="skeleton-box px-1 py-1"></span>
+                                <button className="py-2 px-2 rounded-md skeleton-box"></button>
+                            </div>
+                            <div className="w-full flex items-center gap-x-3 mt-5">
+                                <button className="py-3 px-3 rounded-md skeleton-box"></button>
+                                <button className="py-3 flex-1 rounded-md skeleton-box"></button>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className="w-full sm:flex-col sm:gap-y-5 flex items-stretch gap-x-10 mt-7 sm:mt-0">

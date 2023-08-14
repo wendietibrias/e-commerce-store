@@ -6,18 +6,17 @@ import convertMoney from "../../utils/convertMoney";
 
 const Carts = () => {
     const navigate = useNavigate();
-    const dispatch = useAppDispatch();
     const { cart:{ carts },auth:{ token } } = useAppSelector(state=>state);
 
     return (
         <div className="w-full py-7 sm:px-5">
             <h2 className="text-gray-700 text-lg font-bold sm:text-sm">Shopping Cart ({carts.length})</h2>
-            <div className="mt-8 sm:mt-5 flex items-start gap-x-7 sm:flex-col sm:gap-y-10">
-                <div className="flex-1 grid grid-cols-2 sm:grid-cols-1 sm:w-full gap-3">
-                  {carts?.map((item : ICartState , idx : number) => <CartItemCard key={idx} item={item}/>)}
+            <div className="mt-8 lg:mt-5 flex items-start gap-x-7 lg:flex-col lg:gap-y-10">
+                <div className={`flex-1 grid ${!token ? "grid-cols-4" : "grid-cols-2"} sm:grid-cols-1 sm:w-full gap-3`}>
+                  {carts?.map((item : ICartState , idx : number) => <CartItemCard key={idx} page="cart" item={item}/>)}
                 </div>
                 {token && (
-                    <div className="w-[450px] sm:w-full py-5 px-5 rounded-md bg-gray-100">
+                    <div className="w-[450px] lg:w-full py-5 px-5 rounded-md bg-gray-100">
                     <div className="border-b border-gray-300 pb-2">
                         <h4 className="text-gray-700 text-sm font-semibold">Order Summary  </h4>
                     </div>

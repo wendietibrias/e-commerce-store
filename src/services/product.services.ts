@@ -5,9 +5,11 @@ export const productApi = createApi({
     baseQuery:fetchBaseQuery({
         baseUrl:`${process.env.REACT_APP_BASE_API_URL}/product`
     }),
+    tagTypes:["Product"],
     endpoints:(builder) => ({
         getAllProduct:builder.query({
-            query:(queryParams : string) => `/all-product?${queryParams}`
+            query:(queryParams : string) => `/all-product?${queryParams}`,
+            providesTags:["Product"]
         }),
         getProduct:builder.query({
             query:(id : number) => `/detail/${id}`

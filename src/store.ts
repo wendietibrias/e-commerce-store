@@ -6,6 +6,7 @@ import favoriteSlice from "./slices/favorite.slice";
 import authSlice from "./slices/auth.slice";
 import cartSlice from "./slices/cart.slice";
 import alertSlice from "./slices/alert.slice";
+import { checkoutApi } from "./services/checkout.services";
 
 const store = configureStore({
     reducer: {
@@ -15,12 +16,14 @@ const store = configureStore({
         favorite:favoriteSlice,
         [bannerApi.reducerPath]:bannerApi.reducer,
         [productApi.reducerPath]:productApi.reducer,
-        [authApi.reducerPath]:authApi.reducer
+        [authApi.reducerPath]:authApi.reducer,
+        [checkoutApi.reducerPath]:checkoutApi.reducer
     },
     middleware:(getDefaultMiddleware) => getDefaultMiddleware().concat([
         bannerApi.middleware,
         productApi.middleware,
-        authApi.middleware
+        authApi.middleware,
+        checkoutApi.middleware
     ])
 });
 

@@ -11,6 +11,8 @@ import SkeletonLoadingProduct from "./SkeletonLoadingProduct";
 import ProductCard from "./ProductCard";
 import CartItemCard from "./CartItemCard";
 import Select from "./Select";
+import TransactionCard from "./TransactionCard";
+import OrderDetailCard from "./OrderDetailCart";
 
 export {
     Navbar,
@@ -25,5 +27,7 @@ export {
     ProductCard,
     SkeletonLoadingProduct,
     CartItemCard,
-    Select
+    Select,
+    TransactionCard,
+    OrderDetailCard
 }

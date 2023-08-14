@@ -25,7 +25,9 @@ const Register = () => {
              variant:'success',
              message:res?.message
            }));
-           setTimeout(()=>setSuccessRegister(true),3000);
+           setTimeout(()=>{
+            setSuccessRegister(true)
+           },3000);
         })
         .catch((err)=>{
             dispatch(openAlert({
